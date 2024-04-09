@@ -30,3 +30,33 @@ API_URL = "https alchemy application key"
 CONTRACT_ADDRESS = "actual contract adress"
 ETHERSCAN_API_KEY = "ETHERSCAN_API_KEY"
 ```
+
+
+## Interacting with smart contract
+You can run following command which will run script interact.ts
+
+```
+npx hardhat run scripts/interact.ts --network sepolia
+```
+
+inside script there are 4 defined functions which you can use, don't forget create .env file before
+
+```
+async function getPoemsByAddress(address: string)
+
+async function getPoemsByCurrentAddress()
+
+
+async function publishPoem(title: string, text: string)
+
+async function getPoemById(id: number)
+```
+
+
+
+
+
+## Verify smart contract on Etherscan
+```
+npx hardhat verify --network sepolia $CONTRACT_ADDRESS 'PoetryPublisher'
+```
