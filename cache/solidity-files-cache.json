@@ -1,0 +1,71 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/naumtsev/Desktop/poetry/poetry_smartcontract/contracts/HelloWorld.sol": {
+      "lastModificationDate": 1712690417472,
+      "contentHash": "78e7695a02a8831ee64f2209b9aedaec",
+      "sourceName": "contracts/HelloWorld.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.3"
+      ],
+      "artifacts": [
+        "HelloWorld"
+      ]
+    },
+    "/Users/naumtsev/Desktop/poetry/poetry_smartcontract/contracts/PoetryPublisher.sol": {
+      "lastModificationDate": 1712690415521,
+      "contentHash": "cd7263424bdeec6346af2947b1e5b5e5",
+      "sourceName": "contracts/PoetryPublisher.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    }
+  }
+}

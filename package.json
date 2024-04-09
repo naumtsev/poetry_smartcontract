@@ -17,6 +17,12 @@
   "homepage": "https://github.com/naumtsev/poetry_smartcontract#readme",
   "description": "",
   "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@nomiclabs/hardhat-etherscan": "^3.1.8",
     "hardhat": "^2.22.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ethers": "^5.7.2"
   }
 }
