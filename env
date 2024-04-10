@@ -1,0 +1,6 @@
+# rename it to .env
+PRIVATE_KEY = "meta mask key"
+API_KEY = "alchemy application key"
+API_URL = "https alchemy application key"
+CONTRACT_ADDRESS = "actual contract adress"
+ETHERSCAN_API_KEY = "ETHERSCAN_API_KEY"
