@@ -3,6 +3,7 @@ pragma solidity ^0.8.20;
 
 import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import {EnumerableSet} from "@openzeppelin/contracts/utils/structs/EnumerableSet.sol";
+import {Base64} from "@openzeppelin/contracts/utils/Base64.sol";
 
 contract PoetryPublisher is ERC721 {
     using EnumerableSet for EnumerableSet.UintSet;
@@ -16,6 +17,7 @@ contract PoetryPublisher is ERC721 {
     }
 
     mapping (uint256 => Poem) public poems;
+    mapping (uint256 => bool) public poemExists;
     mapping (address => EnumerableSet.UintSet) private authorToTokenIds;
 
     event PoemPublished(uint256 indexed poemId, address indexed author, string title, string text);
@@ -29,8 +31,7 @@ contract PoetryPublisher is ERC721 {
         _currentTokenId++;
 
         uint256 newItemId = _currentTokenId;
-        _mint(msg.sender, newItemId);
-
+        _safeMint(msg.sender, newItemId);
         Poem memory newPoem = Poem({
             tokenId: newItemId,
             title: title,
@@ -39,6 +40,7 @@ contract PoetryPublisher is ERC721 {
 
         poems[newItemId] = newPoem;
         authorToTokenIds[msg.sender].add(newItemId);
+        poemExists[newItemId] = true;
 
         emit PoemPublished(newItemId, msg.sender, title, text);
 
@@ -56,5 +58,27 @@ contract PoetryPublisher is ERC721 {
             result[i] = authorToTokenIds[author].at(i);
         }
         return result;
+    }
+
+
+    function tokenURI(uint256 tokenId) public view override returns (string memory) {
+        require(poemsContains(tokenId), "URI query for nonexistent token");
+
+        Poem memory poem = poems[tokenId];
+
+        bytes memory dataURI = abi.encodePacked('{"title": "', poem.title, '", "text": "', poem.text, '"}');
+
+
+        return string(
+            abi.encodePacked(
+                "data:application/json;base64,",
+                Base64.encode(dataURI)
+            )
+        );
+    }
+
+
+    function poemsContains(uint256 poemId) public view returns (bool) {
+        return poemExists[poemId];
     }
 }

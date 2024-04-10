@@ -31,7 +31,7 @@ async function getPoemsByCurrentAddress() {
 
 async function publishPoem(title: string, text: string) {
     const poem_transaction = await poetryPublisherContract.publishPoem(title, text);
-    console.log("Poem is published, transaction: " + poem_transaction);
+    console.log("Poem is published, transaction: " + console.log(JSON.stringify(poem_transaction)));
 }
 
 
@@ -41,3 +41,7 @@ async function getPoemById(id: number) {
     console.log('Data of NFT: ' + data)
     return data;
 }
+
+
+publishPoem("Base poem #1", "Bla bla bla bla")
+getPoemsByCurrentAddress()
