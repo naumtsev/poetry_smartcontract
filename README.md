@@ -78,3 +78,9 @@ Token ID: [Token ID number]
 (You can obtain it by calling interact.ts or by finding the transaction with the Method "Publish Poem" associated with your wallet address)
 
 ```
+
+
+## Run tests
+```
+npx hardhat test
+```
