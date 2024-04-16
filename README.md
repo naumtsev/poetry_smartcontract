@@ -80,7 +80,7 @@ Token ID: [Token ID number]
 ```
 
 
-## Run tests
-```
-npx hardhat test
-```
+## Testing
+Sorry, I tried to write tests, however I failed it, nothing did not work
+Instead of it I recorded video where I test my NTF token.
+[Video](google.com).
