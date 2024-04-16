@@ -78,9 +78,3 @@ Token ID: [Token ID number]
 (You can obtain it by calling interact.ts or by finding the transaction with the Method "Publish Poem" associated with your wallet address)
 
 ```
-
-
-## Testing
-Sorry, I tried to write tests, however I failed it, nothing did not work
-Instead of it I recorded video where I test my NTF token.
-[Video](google.com).
